@@ -2,7 +2,7 @@
 // autor: Slavo Heys 
 // slavoheys@gmail.com
 
-// Program do nauki tabliczki mnozenia dla dzieci w zakresie liczb 1 - 10 * 1 - 10
+// Program do nauki tabliczki mnozenia dla dzieci w zakresie liczb (1 - 10) * (1 - 10)
 
 #include <iostream>
 #include <cstdio>
@@ -42,7 +42,7 @@ int main()
 
 		dzialanie = l1 * l2;
 
-		SetConsoleTextAttribute(hOut, FOREGROUND_BLUE);
+		SetConsoleTextAttribute(hOut, FOREGROUND_BLUE | FOREGROUND_GREEN);
 		printf("\tDzialanie numer: %i \n\n", i);
 		SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 		printf("\t%i * %i = ", l1, l2);
@@ -76,7 +76,7 @@ int main()
 	}
 
 	// koniec programu
-	SetConsoleTextAttribute(hOut, FOREGROUND_BLUE);
+	SetConsoleTextAttribute(hOut, FOREGROUND_BLUE | FOREGROUND_GREEN);
 	printf("\tKoniec programu, Twoje wyniki:\n\n");
 	SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
@@ -90,7 +90,7 @@ int main()
 	printf("%i\n\n", odp_bledna);
 	SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
-	SetConsoleTextAttribute(hOut, FOREGROUND_BLUE);
+	SetConsoleTextAttribute(hOut, FOREGROUND_BLUE | FOREGROUND_GREEN);
 	printf("\tIlosc wykonanych dzialan: %i\n\n", ile_razy);
 	SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 
@@ -100,7 +100,7 @@ int main()
 
 	if (odp_poprawna > piecdziesiat_procent and odp_poprawna < osiemdziesiat_procent)
 	{
-		SetConsoleTextAttribute(hOut, FOREGROUND_BLUE);
+		SetConsoleTextAttribute(hOut, FOREGROUND_BLUE | FOREGROUND_GREEN);
 		printf("Masz ponad 50 procent poprawnych odpowiedzi, to calkiem niezly wynik, ale musisz jeszcze duzo cwiczyc!!!\n\n");
 		SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 	}
