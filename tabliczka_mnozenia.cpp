@@ -1,5 +1,8 @@
-﻿// tabliczka_mnozenia.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
+﻿// "tabliczka mnozenia" w wersji 1.0
+// autor: Slavo Heys 
+// slavoheys@gmail.com
+
+// Program do nauki tabliczki mnozenia dla dzieci w zakresie liczb 1 - 10 * 1 - 10
 
 #include <iostream>
 #include <cstdio>
@@ -7,6 +10,8 @@
 #include <cstdlib>
 #include <string>
 #include <ctime>
+#include <time.h>
+#include <fstream>
 
 using namespace std;
 
@@ -119,6 +124,25 @@ int main()
 		SetConsoleTextAttribute(hOut, FOREGROUND_RED);
 		printf("BUUUUU!!! Twoje wyniki sa bardzo zle, wez sie za nauke!!!\n\n");
 		SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+	}
+	// zapis wynikow do pliku txt
+	SYSTEMTIME st;
+	GetSystemTime(&st);
+	int b_rok = st.wYear;
+	int b_month = st.wMonth;
+	int b_day = st.wDay;
+	int b_hour = st.wHour;
+	int b_min = st.wMinute;
+
+	string fraza = to_string(b_rok) + "-" + to_string(b_month) + "-" + to_string(b_day) + " " + to_string(b_hour) + ":"+ to_string(b_min) + " | ilosc dzialan: " + to_string(ile_razy) + " | poprawne: " + to_string(odp_poprawna) + " | bledy: " + to_string(odp_bledna) + "\n";
+	fstream plik;
+	plik.open("historia.txt", ios::out | ios::app);
+	if (plik.good() == true)
+	{
+		plik << fraza;
+		plik.close();
+		system("cls");
+		printf("\tWynik zostal zapisany do pliku historia.txt");
 	}
 
 	system("pause");
